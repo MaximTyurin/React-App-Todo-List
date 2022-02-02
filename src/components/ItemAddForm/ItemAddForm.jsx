@@ -13,6 +13,9 @@ class ItemAddForm extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        if (!this.state.label) {
+            return;
+        }
         this.props.onItemAdded(this.state.label);
         this.setState({
             label: '',
